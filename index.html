@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Handson 11</title>
+    <style>
+        * {
+            font-family:cursive;
+        }
+        body {
+            background-color: rgb(144, 255, 255);
+        }
+        h1 {
+            text-align: center;
+            color: rgb(152, 191, 10);
+            font-size: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>JAVA SCRIPT</h1>
+    <h3>----PROBLEM SOLVING----</h3>
+    <p>Q.1 Write a program which takes an year N as input from the user and find out whether the given year is a Leap Year or not. Note: You have to complete Check_Leap function. No need to take any input.</p>
+    <p><pre>Ans.1 var Check_Leap = (year) => 
+        {
+         if (year%100===0)
+         {
+           if (year%400===0)
+           {
+            return "Leap Year";
+           }
+           else
+           {
+             return "Non Leap Year";
+           }
+         }
+         else if (year%4===0)
+         {
+           return "Leap Year";
+         }
+         else
+         {
+           return "Non Leap Year"; 
+         }
+        };
+        </pre>
+    </p>
+    <p>Q.2 Write a program which takes a numebr N as input from the user and You need to reverse the number. Note: You have to complete Reverse_Number function. No need to take any input.</p>
+    <p><pre>Ans.2 var Reverse_Number = (N) => 
+        {
+          var L=0;
+          while(N)
+          {
+            L+=N%10;
+            N=parseInt(N/10);
+            if (N!==0)
+            {
+              L*=10;
+            }
+          }
+          return L;
+        };</pre>
+    </p>
+    <p>Q.3 You are given two strings S1 and S2, you need to check whether the string S1 is a substring of string S2 or not. Note: You have to complete Substring_Check function. No need to take any input.</p>
+    <p><pre>Ans.3 var Substring_Check = (S1, S2) => 
+        {
+          var n=0;
+          var newstr="";
+          S1+=" ";
+          for (i=0; i < S1.length; i++)
+          {
+            if (S1.charAt(i)===" ")
+            {
+              newstr=S1.slice(n,i);
+              if (newstr===S2)
+              {
+                return "YES";
+              }
+              n=i+1;
+            }
+          }
+          return "NO";
+        };</pre>
+    </p>
+    <p>Q.4 PrepBuddy has an analog clock which consists of two hands one for hour and another for minute. She wants to calculate the shorter angle formed between hour and minute hand at any given time.Note: You have to complete Minimal_Angle function. No need to take any input.</p>
+    <p><pre>Ans.4 var Minimal_Angle = (h, m) => 
+      {
+         var minuteangle=m*6;
+         var hourangle=h*30+(15*minuteangle)/180;
+         var angle=Math.abs(hourangle-minuteangle);
+         return min(angle,360-angle);
+      };
+        var min = (a,b) => {
+          return((a < b)?a:b);
+        }</pre>
+    </p>
+    <p>Q.5 Have you heard of Perfect numbers? If not let me tell you what is it, Perfect Numbers are integers that are equal to the sum of all its divisors except that number itself. Now, You are given an integer N, write a program to check whether the given number is a Perfect Number or not. Note: You have to complete Perfect _Check function. No need to take any input.</p>
+    <p><pre>Ans.5 var Perfect_Check = (N) => 
+      {
+        var sum=0;
+        for (let i=0; i < N; i++)
+        {
+          if (N%i===0)
+          {
+            sum+=i;
+          }
+        }
+        if (sum===N)
+        {
+          return("YES");
+        }
+        else
+        {
+          return("NO");
+        }
+      };</pre>
+    </p>
+</body>
+</html>
